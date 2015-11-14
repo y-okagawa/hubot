@@ -6,10 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-package "node" do
-  action :install
-end
-
-package "npm" do
-  action :install
+execute 'rpm update' do
+  command 'npm update -g npm'
 end
