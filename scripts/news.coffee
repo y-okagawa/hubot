@@ -1,8 +1,8 @@
 client = require('cheerio-httpcli')
 
-news = ""
 module.exports = (robot) ->
   robot.respond /yahoo (.*)/i, (res) ->
+    news = ""
     switch res.match[1]
       when '経済'
         param = 'hl?c=bus'
@@ -18,5 +18,5 @@ module.exports = (robot) ->
       $('.topics > li > div > p > a').each ()->
         news = news + $(this).text() + "\r\n"
         news = news + $(this).attr("href") + "\r\n"
-    res.send news
+      res.send news
 
