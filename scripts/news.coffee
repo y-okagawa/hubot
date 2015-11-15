@@ -14,7 +14,7 @@ module.exports = (robot) ->
         param = ''
     client.fetch 'http://news.yahoo.co.jp/' + param, {}, (err, $, sc)->
       news = $('.topics > li > div > h1 > a').text() + "\r\n"
-      news = $('.topics > li > div > h1 > a').attr("href") + "\r\n"
+      news = news + $('.topics > li > div > h1 > a').attr("href") + "\r\n"
       $('.topics > li > div > p > a').each ()->
         news = news + $(this).text() + "\r\n"
         news = news + $(this).attr("href") + "\r\n"
