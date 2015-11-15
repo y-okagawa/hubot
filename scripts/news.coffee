@@ -5,6 +5,6 @@ module.exports = (robot) ->
   robot.respond /yahooニュース/i, (res) ->
     client.fetch 'http://www.yahoo.co.jp/', {}, (err, $, sc)->
       $('ul.emphasis > li > a').each ()-> # jQueryライクに要素を検索できる!!
-        news = news + $(this).text() + "¥n"
+        news = news + $(this).text() + "\r\n"
       res.send news
 
