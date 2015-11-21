@@ -15,27 +15,26 @@ module.exports = (robot) ->
       return
 
 
-    wiki = "GitHub Wiki Update\r\n"
-    wiki = wiki + "#{req.body.pages[0].page_name}\r\n"
-    wiki = wiki + "#{req.body.pages[0].html_url}\r\n"
+    # wiki = wiki + "#{req.body.pages[0].page_name}\r\n"
+    # wiki = wiki + "#{req.body.pages[0].html_url}\r\n"
 
-    robot.send {room: 'general'}, wiki
+    robot.send {room: 'general'}, getWikiContent req.body
 
     res.send "ok"
 
 
+getWikiContent = (json) ->
+  action = json.body.pages[0].action
+  switch action
+    when 'create'
+      wiki = """
+        GitHub Wiki Create\r\n
+      """
+    when 'edit'
+      wiki = """
+        GitHub Wiki Update\r\n
+      """
 
-   # tweet = switch event_type
-   #   when 'issues'
-   #     tweetForIssues req.body
-   #   when 'pull_request'
-   #     tweetForPullRequest req.body
-
-   # if tweet?
-   ##   robot.send {}, tweet
-    #  res.status(201).send 'created'
-   # else
-   #   res.status(200).send 'ok'
 
 
 isCorrectSignature = (signature, body) ->
