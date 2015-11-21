@@ -14,9 +14,11 @@ module.exports = (robot) ->
       res.status(401).send 'unauthorized'
       return
 
-    #res.send "ok"
-
     robot.send {room: 'general'}, 'issue'
+
+    res.send "ok"
+
+
 
    # tweet = switch event_type
    #   when 'issues'
