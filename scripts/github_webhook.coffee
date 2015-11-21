@@ -27,10 +27,12 @@ getWikiContent = (json) ->
   switch json.action
     when 'created'
       """
+      Github Wiki Created\r\n
       #{json.title}
       """
     when 'edited'
       """
+      Github Wiki Updated\r\n
       #{json.title}
       """
 
