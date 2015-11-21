@@ -24,7 +24,7 @@ module.exports = (robot) ->
 
 
 getWikiContent = (json) ->
-  action = json.body.pages[0].action
+  action = json.pages[0].action
   switch action
     when 'create'
       wiki = """
