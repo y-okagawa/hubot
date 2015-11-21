@@ -28,15 +28,15 @@ getWikiContent = (json) ->
     when 'created'
       """
       Github Wiki Created
-      Wikiが作成されました。確認してください。\r\n
+      Wikiが作成されました。
 
-      タイトル：#{json.title}\r\n
-      URL：#{json.html_url}\r\n
+      タイトル：#{json.title}
+      URL：#{json.html_url}
       """
     when 'edited'
       """
       Github Wiki Updated
-      Wikiが更新されました。確認してください。
+      Wikiが更新されました。
 
       タイトル：#{json.title}
       URL：#{json.html_url}
