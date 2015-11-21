@@ -14,7 +14,7 @@ module.exports = (robot) ->
       res.status(401).send 'unauthorized'
       return
 
-    robot.send {room: 'general'}, getWikiContent req.body.pages[0]
+    robot.send {room: process.env.GITHUB_WIKI_HUBOT_ROOM}, getWikiContent req.body.pages[0]
     res.send "ok"
 
 getWikiContent = (json) ->
