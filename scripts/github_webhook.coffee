@@ -14,17 +14,19 @@ module.exports = (robot) ->
       res.status(401).send 'unauthorized'
       return
 
-    tweet = switch event_type
-      when 'issues'
-        tweetForIssues req.body
-      when 'pull_request'
-        tweetForPullRequest req.body
+    res.send "issue"
 
-    if tweet?
-      robot.send {}, tweet
-      res.status(201).send 'created'
-    else
-      res.status(200).send 'ok'
+   # tweet = switch event_type
+   #   when 'issues'
+   #     tweetForIssues req.body
+   #   when 'pull_request'
+   #     tweetForPullRequest req.body
+
+   # if tweet?
+   ##   robot.send {}, tweet
+    #  res.status(201).send 'created'
+   # else
+   #   res.status(200).send 'ok'
 
 
 isCorrectSignature = (signature, body) ->
