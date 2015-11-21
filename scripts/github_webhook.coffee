@@ -2,7 +2,7 @@
 # GitHub Webhookのエンドポイント
 #
 # Notes:
-# Pull Request, Issueが対象
+# wikiが対象
 crypto = require 'crypto'
 
 module.exports = (robot) ->
@@ -14,7 +14,7 @@ module.exports = (robot) ->
       res.status(401).send 'unauthorized'
       return
 
-    robot.send {room: 'general'}, req.body.action
+    robot.send {room: 'general'}, req.body.pages[0].page_name
 
     res.send "ok"
 
