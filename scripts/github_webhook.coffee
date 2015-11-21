@@ -14,32 +14,22 @@ module.exports = (robot) ->
       res.status(401).send 'unauthorized'
       return
 
-
-    # wiki = wiki + "#{req.body.pages[0].page_name}\r\n"
-    # wiki = wiki + "#{req.body.pages[0].html_url}\r\n"
-
     robot.send {room: 'general'}, getWikiContent req.body.pages[0]
-
     res.send "ok"
-
 
 getWikiContent = (json) ->
   switch json.action
     when 'created'
       """
       Github Wiki Created
-
-      Wikiが作成されました。
-      タイトル：#{json.title}
-      URL：#{json.html_url}
+      >TITLE：#{json.title}
+      >URL：#{json.html_url}
       """
     when 'edited'
       """
       Github Wiki Updated
-
-      Wikiが更新されました。
-      タイトル：#{json.title}
-      URL：#{json.html_url}
+      >TITLE#{json.title}
+      >URL：#{json.html_url}
       """
 
 isCorrectSignature = (signature, body) ->
