@@ -22,13 +22,13 @@ getWikiContent = (json) ->
     when 'created'
       """
       Github Wiki Created
-      >TITLE: #{json.title}
+      >Title: #{json.title}
       >URL: #{json.html_url}
       """
     when 'edited'
       """
       Github Wiki Updated
-      >TITLE: #{json.title}
+      >Title: #{json.title}
       >URL: #{json.html_url}
       """
 
