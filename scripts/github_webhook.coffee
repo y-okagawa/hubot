@@ -25,9 +25,9 @@ module.exports = (robot) ->
 
 getWikiContent = (json) ->
   switch json.action
-    when 'create'
+    when 'created'
       json.title
-    when 'edit'
+    when 'edited'
       json.title
 
 
