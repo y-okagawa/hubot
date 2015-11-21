@@ -22,14 +22,14 @@ getWikiContent = (json) ->
     when 'created'
       """
       Github Wiki Created
-      >TITLE：#{json.title}
-      >URL：#{json.html_url}
+      >TITLE: #{json.title}
+      >URL: #{json.html_url}
       """
     when 'edited'
       """
       Github Wiki Updated
-      >TITLE#{json.title}
-      >URL：#{json.html_url}
+      >TITLE: #{json.title}
+      >URL: #{json.html_url}
       """
 
 isCorrectSignature = (signature, body) ->
