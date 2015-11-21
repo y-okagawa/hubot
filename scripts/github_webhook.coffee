@@ -28,21 +28,19 @@ getWikiContent = (json) ->
     when 'created'
       """
       Github Wiki Created
-      Wikiが作成されました。
 
+      Wikiが作成されました。
       タイトル：#{json.title}
       URL：#{json.html_url}
       """
     when 'edited'
       """
       Github Wiki Updated
-      Wikiが更新されました。
 
+      Wikiが更新されました。
       タイトル：#{json.title}
       URL：#{json.html_url}
       """
-
-
 
 isCorrectSignature = (signature, body) ->
   pairs = signature.split '='
@@ -53,25 +51,3 @@ isCorrectSignature = (signature, body) ->
   generated_signature = [digest_method, hashed_data].join '='
 
   return signature is generated_signature
-
-tweetForPullRequest = (json) ->
-  action = json.action
-  pr = json.pull_request
-
-  switch action
-    when 'opened'
-      "#{pr.user.login}さんからPull Requestをもらいました #{pr.title} #{pr.html_url}"
-    when 'closed'
-      if pr.merged
-        "#{pr.user.login}さんのPull Requestをマージしました #{pr.title} #{pr.html_url}"
-
-tweetForIssues = (json) ->
-  action = json.action
-  issue = json.issue
-
-  switch action
-    when 'opened'
-      "#{issue.user.login}さんがIssueを上げました #{issue.title} #{issue.html_url}"
-    when 'closed'
-      "#{issue.user.login}さんのIssueがcloseされました #{issue.title} #{issue.html_url}"
-
