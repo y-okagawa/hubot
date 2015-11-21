@@ -24,7 +24,7 @@ module.exports = (robot) ->
 
 
 getWikiContent = (json) ->
-  "test"
+  json.name
 
 
 
