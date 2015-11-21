@@ -18,13 +18,13 @@ module.exports = (robot) ->
     # wiki = wiki + "#{req.body.pages[0].page_name}\r\n"
     # wiki = wiki + "#{req.body.pages[0].html_url}\r\n"
 
-    robot.send {room: 'general'}, getWikiContent req.body
+    robot.send {room: 'general'}, getWikiContent req.body.pages[0]
 
     res.send "ok"
 
 
 getWikiContent = (json) ->
-  action = json.pages[0].action
+  action = json.action
   switch action
     when 'create'
       wiki = """
