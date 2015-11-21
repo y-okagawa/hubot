@@ -24,16 +24,7 @@ module.exports = (robot) ->
 
 
 getWikiContent = (json) ->
-  #action = json.action
-  ##switch action
-   # when 'create'
-   ##   wiki = """
-    ##    GitHub Wiki Create\r\n
-     # """
-   # when 'edit'
-   #   wiki = """
-   #     GitHub Wiki Update\r\n
-   #   """
+  "test"
 
 
 
