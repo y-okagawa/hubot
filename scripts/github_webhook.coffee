@@ -14,7 +14,12 @@ module.exports = (robot) ->
       res.status(401).send 'unauthorized'
       return
 
-    robot.send {room: 'general'}, req.body.pages[0].page_name
+
+    wiki = "GitHub Wiki Update\r\n"
+    wiki = wiki + "#{req.body.pages[0].page_name}\r\n"
+    wiki = wiki + "#{req.body.pages[0].html_url}\r\n"
+
+    robot.send {room: 'general'}, wiki
 
     res.send "ok"
 
