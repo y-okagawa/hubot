@@ -21,3 +21,5 @@ $ bin/hubot
 hubot> hubot ping
 hubot> PONG # 返答があれば起動成功
 ```
+
+## GitHub Wiki Webhook
