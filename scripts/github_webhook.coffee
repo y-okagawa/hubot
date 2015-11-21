@@ -27,19 +27,19 @@ getWikiContent = (json) ->
   switch json.action
     when 'created'
       """
-      Github Wiki Created\r\n
-
+      Github Wiki Created
       Wikiが作成されました。確認してください。\r\n
-      Wikiタイトル：#{json.title}\r\n
-      Wiki URL：#{json.html_url}\r\n
+
+      タイトル：#{json.title}\r\n
+      URL：#{json.html_url}\r\n
       """
     when 'edited'
       """
-      Github Wiki Updated\r\n
+      Github Wiki Updated
+      Wikiが更新されました。確認してください。
 
-      Wikiが更新されました。確認してください。\r\n
-      Wikiタイトル：#{json.title}\r\n
-      Wiki URL：#{json.html_url}\r\n
+      タイトル：#{json.title}
+      URL：#{json.html_url}
       """
 
 
