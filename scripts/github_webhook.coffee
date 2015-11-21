@@ -16,7 +16,7 @@ module.exports = (robot) ->
 
     res.send "ok"
 
-    robot.send "issue"
+    robot.send {room: 'general'}, 'issue'
 
    # tweet = switch event_type
    #   when 'issues'
