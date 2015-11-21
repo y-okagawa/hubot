@@ -14,7 +14,7 @@ module.exports = (robot) ->
       res.status(401).send 'unauthorized'
       return
 
-    res.send "ok"
+    #res.send "ok"
 
     robot.send {room: 'general'}, 'issue'
 
